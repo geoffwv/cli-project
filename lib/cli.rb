@@ -9,10 +9,17 @@ def run
   puts " "
   puts ": ======================= :"
   puts " "
+  
+  html = open("https://en.wikipedia.org/wiki/Chelsea_F.C.")
+  doc = Nokogiri::HTML(html)
+  facts = []
+  doc.css("tbody tr").each do |fact|
+    fullname = fact.css("th td").text
+    facts << fullname
+  end
 
-  # html = open("https://en.wikipedia.org/wiki/Chelsea_F.C.")
-  # doc = Nokogiri::HTML(html)
-
-  # binding.pry
+  facts.each.with_index(1) do |fullname, index|
+    puts "#{index}. #{fullname}"
+  end
   
 end
