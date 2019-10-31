@@ -15,6 +15,4 @@ def run
 
   # binding.pry
   
-  end
-
 end
