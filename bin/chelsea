@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 require_relative "../lib/cli"
+require_relative "../lib/fact"
+require_relative "../lib/scraper"
 require 'pry'
 
 run
