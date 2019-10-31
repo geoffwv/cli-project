@@ -13,8 +13,8 @@ def run
   html = open("https://en.wikipedia.org/wiki/Chelsea_F.C.")
   doc = Nokogiri::HTML(html)
   facts = []
-  doc.css("tbody tr").each do |fact|
-    fullname = fact.css("th td").text
+  doc.css("tbody tr")[1].css("th").each do |fact|
+    fullname = fact.css("td").text
     facts << fullname
   end
 
